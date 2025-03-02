@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+
+    <!-- daisyUI -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#F4F7FF] font-poppins min-h-screen">
+    <header class="py-4 container mx-auto">
+      <nav
+        class="shadow-sm p-4 rounded-xl bg-white flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <img class="w-9" src="./assets/logo.png" alt=" logo" />
+          <h2 class="text-3xl text-gray-900">
+            Dev<span class="font-bold text-3xl text-black">Board</span>
+          </h2>
+        </div>
+
+        <button
+          id="desk"
+          class="px-4 py-3 bg-blue-600 text-white font-bold rounded-md cursor-pointer"
+        >
+          Back To Desk
+        </button>
+      </nav>
+    </header>
+
+    <main class="container mx-auto">
+      <div class="text-center font-bold text-3xl">
+        <h1>Blogs</h1>
+      </div>
+
+      <section class="pt-4 space-y-6">
+        <!-- Question -1  -->
+
+        <div class="bg-white p-3 rounded-md">
+          <h2
+            class="font-semibold border-b-2 border-dashed border-gray-300 pb-2"
+          >
+            Question-1: What are the different ways to select an element in the
+            DOM?
+          </h2>
+          <p class="pt-2 text-gray-600">
+            এলিমেন্ট সিলেক্ট করার কয়েকটি উপায় আছে। সেগুলো হলো : <br />
+            ১) getElementById() ২) getElementsByTagName()
+            ৩)getElementsByClassName() ৪) querySelectorAll() ৫) querySelector()
+          </p>
+        </div>
+
+        <!-- Question -2  -->
+
+        <div class="bg-white p-3 rounded-md">
+          <h2
+            class="font-semibold border-b-2 border-dashed border-gray-300 pb-2"
+          >
+            Question-2: What is the difference between innerHTML, innerText, and
+            textContent ?
+          </h2>
+          <p class="pt-2 text-gray-600">
+            এলিমেন্ট সিলেক্ট করার কয়েকটি উপায় আছে। সেগুলো হলো : <br />
+            ১) getElementById() ২) getElementsByTagName()
+            ৩)getElementsByClassName() ৪) querySelectorAll() ৫) querySelector()
+          </p>
+        </div>
+
+        <!-- Question -3  -->
+
+        <div class="bg-white p-3 rounded-md">
+          <h2
+            class="font-semibold border-b-2 border-dashed border-gray-300 pb-2"
+          >
+            Question-3: What is event delegation in the DOM?
+          </h2>
+          <p class="pt-2 text-gray-600">
+            এলিমেন্ট সিলেক্ট করার কয়েকটি উপায় আছে। সেগুলো হলো : <br />
+            ১) getElementById() ২) getElementsByTagName()
+            ৩)getElementsByClassName() ৪) querySelectorAll() ৫) querySelector()
+          </p>
+        </div>
+
+        <!-- Question -4  -->
+
+        <div class="bg-white p-3 rounded-md">
+          <h2
+            class="font-semibold border-b-2 border-dashed border-gray-300 pb-2"
+          >
+            Question-4: What is event bubbling in the DOM?
+          </h2>
+          <p class="pt-2 text-gray-600">
+            এলিমেন্ট সিলেক্ট করার কয়েকটি উপায় আছে। সেগুলো হলো : <br />
+            ১) getElementById() ২) getElementsByTagName()
+            ৩)getElementsByClassName() ৪) querySelectorAll() ৫) querySelector()
+          </p>
+        </div>
+
+        <!-- Question -5  -->
+
+        <div class="bg-white p-3 rounded-md">
+          <h2
+            class="font-semibold border-b-2 border-dashed border-gray-300 pb-2"
+          >
+            Question-5: How do you create, add, and remove elements using
+            JavaScript?
+          </h2>
+          <p class="pt-2 text-gray-600">
+            এলিমেন্ট সিলেক্ট করার কয়েকটি উপায় আছে। সেগুলো হলো : <br />
+            ১) getElementById() ২) getElementsByTagName()
+            ৩)getElementsByClassName() ৪) querySelectorAll() ৫) querySelector()
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.getElementById("desk").addEventListener("click", function () {
+        window.location.href = "./index.html";
+      });
+    </script>
+  </body>
+</html>

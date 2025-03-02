@@ -1,346 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Task manager</title>
 
     <!-- daisyUI -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.9/daisyui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
-        .font-poppins {
-            font-family: "Poppins", sans-serif;
-        }
+      .font-poppins {
+        font-family: "Poppins", sans-serif;
+      }
     </style>
+  </head>
 
-
-
-</head>
-
-<body class="bg-[#F4F7FF] mb-5 font-poppins min-h-screen">
-    <header class="py-4  container mx-auto">
-        <nav class=" p-4 rounded-xl bg-white flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <img src="./assets/logo.png" alt=" logo">
-                <h2 class="text-3xl text-gray-900">Dev<span class="font-bold text-3xl text-black">Board</span></h2>
-            </div>
-            <div class="flex items-center gap-2">
-                <div class="bg-[#F4F7FF] px-3 py-3 rounded-full flex items-center gap-5 ">
-                    <img src="./assets/checkbox.png" alt="">
-                    <span class="font-bold text-2xl">23</span>
-                </div>
-                <div class="">
-                    <button class="bg-[#F4F7FF] p-3 cursor-pointer rounded-full">
-                        <img src="./assets/theme-btn.png" alt="">
-                    </button>
-                </div>
-            </div>
-        </nav>
+  <body class="bg-[#F4F7FF] font-poppins min-h-screen">
+    <header class="py-4 container mx-auto">
+      <nav class="p-4 rounded-xl bg-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img class="w-9" src="./assets/logo.png" alt=" logo" />
+          <h2 class="text-3xl text-gray-900">
+            Dev<span class="font-bold text-3xl text-black">Board</span>
+          </h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <div
+            class="bg-[#F4F7FF] px-3 py-2 rounded-full flex items-center gap-5"
+          >
+            <img class="w-6" src="./assets/checkbox.png" alt="" />
+            <span id="task-done" class="font-bold text-2xl">23</span>
+          </div>
+          <div class="">
+            <button class="bg-[#F4F7FF] p-2 cursor-pointer rounded-full">
+              <img class="w-8 h-8" src="./assets/theme-btn.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
 
-    <main class=" container mx-auto rounded-xl  grid grid-cols-4 gap-4">
-
-        <!-- task title section -->
-        <section class=" p-4 col-span-3 bg-white  rounded-xl">
-
-            <!-- left side section -->
-            <div class=" pb-4 grid grid-cols-4 gap-3  border-b-2 border-dashed border-gray-300">
-
-
-                <!-- task assign card -->
-                <div class=" flex items-center gap-2 bg-[#F4F7FF] p-3 rounded-lg">
-
-                    <div class="">
-                        <img src="./assets/checkbox.png" alt="">
-                    </div>
-
-                    <div>
-                        <p class="text-[0.7rem] text-gray-500">Task Assigned</p>
-                        <h1>6</h1>
-                    </div>
-
-                </div>
-
-
-                <!-- discover something cards -->
-                <div
-                    class="col-span-2 flex items-center  bg-gradient-to-r from-[#3752FD] via-[#6C7FF9] to-[#9BA8F8] rounded-lg px-6 py-2 gap-4 text-white cursor-pointer">
-
-                    <img class="h-16 w-16" src="./assets/board.png" alt="">
-
-                    <h3>Discover Something New Today!</h3>
-
-                </div>
-
-                <!-- date card -->
-                <div class="bg-[#F4F7FF] p-3 rounded-lg flex items-center">
-                    <div class="bg-white rounded-full p-3">
-                        <img src="./assets/calender.png" alt="">
-                    </div>
-
-                    <div>
-                        <!-- date -->
-                    </div>
-                </div>
-
+    <main class="container mx-auto rounded-xl lg:grid grid-cols-4 gap-4">
+      <!-- task title section -->
+      <section class="p-4 col-span-3 bg-white rounded-xl">
+        <!-- left side section -->
+        <div
+          class="pb-4 grid lg:grid-cols-4 gap-3 border-b-2 border-dashed border-gray-300"
+        >
+          <!-- task assign card -->
+          <div class="flex items-center gap-2 bg-[#F4F7FF] p-3 rounded-lg">
+            <div class="w-6">
+              <img src="./assets/checkbox.png" alt="" />
             </div>
 
-
-
-
-            <!-- cards section -->
-
-
-
-            <div class="grid  grid-cols-3 gap-4">
-
-                <!-- <div>
-                    <div>
-                        <h2>ShopEase</h2>
-                        <h1>Fix Mobile Button Issue </h1>
-                        <p>Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works
-                            properly
-                            and ensure onClick works properly</p>
-                    </div>
-                    <div>
-                        <div>
-                            <h3>Deadline</h3>
-                            <time datetime="">21 March 2025</time>
-                        </div>
-                        <button>Completed</button>
-                    </div>
-                </div> -->
-
-                <!-- card 1 -->
-
-                <div class="card bg-[#F4F7FF] shadow-sm">
-                    <div class="card-body">
-                        <span class="badge badge-xl rounded-[5px] text-xs text-gray-600">Shop Ease</span>
-                        <div class="flex justify-between">
-                            <h2 class="text-2xl font-bold">Fix Mobile Button Issue </h2>
-
-                        </div>
-
-
-                        <div class=" ">
-
-
-                            <p class="bg-white p-4  mt-4 text-gray-500 rounded-md">Debug using Chrome DevTools, check for overlapping elements, and
-                                ensure onClick works properly...</p>
-
-
-                        </div>
-
-                        <div class="mt-6">
-                            <div class="justify-between card-actions">
-                                <div>
-                                    <p class="text-gray-600">Deadline</p>
-                                    <p class="font-semibold">4 March 2025</p>
-                                </div>
-                                <button class="btn  bg-blue-600 text-white rounded-md hover:bg-blue-700">Completed</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card -2 -->
-                <div class="card bg-[#F4F7FF] shadow-sm">
-                    <div class="card-body">
-                        <span class="badge badge-xl text-xs rounded-[5px] text-gray-600">Cloud Sync</span>
-                        <div class="flex justify-between">
-                            <h2 class="text-2xl font-bold">Add Dark Mode </h2>
-
-                        </div>
-
-
-                        <div class=" ">
-
-
-                            <p class="bg-white p-4 mt-4 text-gray-500 rounded-md ">Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth...</p>
-
-
-                        </div>
-
-                        <div class="mt-6">
-                            <div class="justify-between card-actions">
-                                <div>
-                                    <p class="text-gray-600">Deadline</p>
-                                    <p class="font-semibold">5 March 2025</p>
-                                </div>
-                                <button class="btn  bg-blue-600 text-white rounded-md hover:bg-blue-700">Completed</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card-3 -->
-
-                <div class="card bg-[#F4F7FF] shadow-sm">
-                    <div class="card-body">
-                        <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]">Swift Pay</span>
-                        <div class="flex justify-between">
-                            <h2 class="text-2xl font-bold">Optimize Home page </h2>
-
-                        </div>
-
-
-                        <div class=" ">
-
-
-                            <p class="bg-white p-4 mt-4 text-gray-500 rounded-md ">Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth...</p>
-
-
-                        </div>
-
-                        <div class="mt-6">
-                            <div class="justify-between card-actions">
-                                <div>
-                                    <p class="text-gray-600">Deadline</p>
-                                    <p class="font-semibold">8 March 2025</p>
-                                </div>
-                                <button class="btn  bg-blue-600 text-white rounded-md hover:bg-blue-700">Completed</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card -4 -->
-
-                <div class="card bg-[#F4F7FF] shadow-sm">
-                    <div class="card-body">
-                        <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]">Meta</span>
-                        <div class="flex justify-between">
-                            <h2 class="text-2xl font-bold">Add new emoji 🤲 </h2>
-
-                        </div>
-
-
-                        <div class=" ">
-
-
-                            <p class="bg-white p-4 mt-4 text-gray-500 rounded-md">Debug using Chrome DevTools, check for overlapping elements, and
-                                ensure onClick works properly...</p>
-
-
-                        </div>
-
-                        <div class="mt-6">
-                            <div class="justify-between card-actions">
-                                <div>
-                                    <p class="text-gray-600">Deadline</p>
-                                    <p class="font-semibold">15 March 2025</p>
-                                </div>
-                                <button class="btn bg-blue-600 text-white rounded-md hover:bg-blue-700">Completed</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- card- 5 -->
-
-                <div class="card bg-[#F4F7FF] shadow-sm">
-                    <div class="card-body">
-                        <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]">Google LLC</span>
-                        <div class="flex justify-between">
-                            <h2 class="text-2xl font-bold">Integrate OpenAI API  </h2>
-
-                        </div>
-
-
-                        <div class=" ">
-
-
-                            <p class="bg-white p-4 mt-4 text-gray-500 rounded-md">Store the user's preference in localStorage, update CSS variables dynamically, and apply a smooth...</p>
-
-
-                        </div>
-
-                        <div class="mt-6">
-                            <div class="justify-between card-actions">
-                                <div>
-                                    <p class="text-gray-600">Deadline</p>
-                                    <p class="font-semibold">21 March 2025</p>
-                                </div>
-                                <button class="btn  bg-blue-600 text-white rounded-md hover:bg-blue-700">Completed</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- card 6 -->
-
-                <div class="card bg-[#F4F7FF] shadow-sm">
-                    <div class="card-body gap-3">
-                        <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]">Glassdoar</span>
-                        <div class="flex justify-between">
-                            <h2 class="text-2xl font-bold">Improve Job searching  </h2>
-
-                        </div>
-
-
-                        <div class=" ">
-
-
-                            <p class="bg-white p-4  mt-4 text-gray-500 rounded-md ">Debug using Chrome DevTools, check for overlapping elements, and
-                                ensure onClick works properly...</p>
-
-
-                        </div>
-
-                        <div class="mt-6">
-                            <div class="justify-between card-actions">
-                                <div>
-                                    <p class="text-gray-600">Deadline</p>
-                                    <p class="font-semibold">27 March 2025</p>
-                                </div>
-                                <button class="btn  bg-blue-600 text-white rounded-md hover:bg-blue-700">Completed</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+            <div>
+              <p class="text-[0.7rem] text-gray-500">Task Assigned</p>
+              <h1 id="task-numb">6</h1>
+            </div>
+          </div>
+
+          <!-- discover something cards -->
+          <div
+            id="discover"
+            class="lg:col-span-2 flex items-center bg-gradient-to-r from-[#3752FD] via-[#6C7FF9] to-[#9BA8F8] rounded-lg px-6 py-2 gap-4 text-white cursor-pointer"
+          >
+            <img class="h-14 w-14" src="./assets/board.png" alt="" />
+
+            <h3>Discover Something New Today!</h3>
+          </div>
+
+          <!-- date card -->
+          <div class="bg-[#F4F7FF] p-3 rounded-lg flex items-center gap-3">
+            <div class="bg-white rounded-full p-3">
+              <img src="./assets/calender.png" alt="" />
             </div>
 
-
-
-        </section>
-
-
-
-
-
-        <!-- activity aside section -->
-        <aside class="col-span-1 bg-white rounded-xl">
-
-            <div class="text-center border-b-2 border-dashed border-gray-300 p-3">
-                <div class="flex items-center justify-center gap-3">
-                    <img src="./assets/activity.png" alt="">
-                    <h2 class="text-gray-800 font-">Activity Log</h2>
-                </div>
-                <button class="px-4 py-2 bg-blue-600 text-white mt-3 rounded-md cursor-pointer hover:bg-blue-700">Clear History</button>
+            <div id="date-today" class="text-xs">
+              <span id="day">Wed</span> <br />
+              <span id="date" class="font-bold">Jul 28 2025</span>
             </div>
+          </div>
+        </div>
 
-        </aside>
+        <!-- cards section -->
+
+        <div class="grid lg:grid-cols-3 gap-4 mt-4">
+          <!-- card 1 -->
+
+          <div class="card bg-[#F4F7FF] shadow-sm">
+            <div class="card-body">
+              <span class="badge badge-xl rounded-[5px] text-xs text-gray-600"
+                >Shop Ease</span
+              >
+              <div class="flex justify-between">
+                <h2 class="text-xl font-bold">Fix Mobile Button Issue</h2>
+              </div>
+
+              <div class=" ">
+                <p class="bg-white p-4 mt-4 text-gray-500 rounded-md">
+                  Debug using Chrome DevTools, check for overlapping elements,
+                  and ensure onClick works properly...
+                </p>
+              </div>
+
+              <div class="mt-6">
+                <div class="justify-between card-actions">
+                  <div>
+                    <p class="text-gray-600">Deadline</p>
+                    <p class="font-semibold">4 March 2025</p>
+                  </div>
+                  <button
+                    class="task-btn btn bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- card -2 -->
+          <div class="card bg-[#F4F7FF] shadow-sm">
+            <div class="card-body">
+              <span class="badge badge-xl text-xs rounded-[5px] text-gray-600"
+                >Cloud Sync</span
+              >
+              <div class="flex justify-between">
+                <h2 class="text-xl font-bold">Add Dark Mode</h2>
+              </div>
+
+              <div class=" ">
+                <p class="bg-white p-4 mt-4 text-gray-500 rounded-md">
+                  Store the user's preference in localStorage, update CSS
+                  variables dynamically, and apply a smooth...
+                </p>
+              </div>
+
+              <div class="mt-6">
+                <div class="justify-between card-actions">
+                  <div>
+                    <p class="text-gray-600">Deadline</p>
+                    <p class="font-semibold">5 March 2025</p>
+                  </div>
+                  <button
+                    class="task-btn btn bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- card-3 -->
+
+          <div class="card bg-[#F4F7FF] shadow-sm">
+            <div class="card-body">
+              <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]"
+                >Swift Pay</span
+              >
+              <div class="flex justify-between">
+                <h2 class="text-xl font-bold">Optimize Home page </h2>
+              </div>
+
+              <div class=" ">
+                <p class="bg-white p-4 mt-4 text-gray-500 rounded-md">
+                  Store the user's preference in localStorage, update CSS
+                  variables dynamically, and apply a smooth...
+                </p>
+              </div>
+
+              <div class="mt-6">
+                <div class="justify-between card-actions">
+                  <div>
+                    <p class="text-gray-600">Deadline</p>
+                    <p class="font-semibold">8 March 2025</p>
+                  </div>
+                  <button
+                    class="task-btn btn bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- card -4 -->
+
+          <div class="card bg-[#F4F7FF] shadow-sm">
+            <div class="card-body">
+              <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]"
+                >Meta</span
+              >
+              <div class="flex justify-between">
+                <h2 class="text-xl font-bold">Add new emoji 🤲</h2>
+              </div>
+
+              <div class="">
+                <p class="bg-white p-4 mt-4 text-gray-500 rounded-md">
+                  Debug using Chrome DevTools, check for overlapping elements,
+                  and ensure onClick works properly...
+                </p>
+              </div>
+
+              <div class="mt-6">
+                <div class="justify-between card-actions">
+                  <div>
+                    <p class="text-gray-600">Deadline</p>
+                    <p class="font-semibold">15 March 2025</p>
+                  </div>
+                  <button
+                    class="task-btn btn bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- card- 5 -->
+
+          <div class="card bg-[#F4F7FF] shadow-sm">
+            <div class="card-body">
+              <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]"
+                >Google LLC</span
+              >
+              <div class="flex justify-between">
+                <h2 class="text-xl font-bold">Integrate OpenAI API</h2>
+              </div>
+
+              <div class=" ">
+                <p class="bg-white p-4 mt-4 text-gray-500 rounded-md">
+                  Store the user's preference in localStorage, update CSS
+                  variables dynamically, and apply a smooth...
+                </p>
+              </div>
+
+              <div class="mt-6">
+                <div class="justify-between card-actions">
+                  <div>
+                    <p class="text-gray-600">Deadline</p>
+                    <p class="font-semibold">21 March 2025</p>
+                  </div>
+                  <button
+                    class="task-btn btn bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- card 6 -->
+
+          <div class="card bg-[#F4F7FF] shadow-sm">
+            <div class="card-body gap-3">
+              <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]"
+                >Glassdoar</span
+              >
+              <div class="flex justify-between">
+                <h2 class="text-xl font-bold">Improve Job searching</h2>
+              </div>
+
+              <div class=" ">
+                <p class="bg-white p-4 mt-4 text-gray-500 rounded-md">
+                  Debug using Chrome DevTools, check for overlapping elements,
+                  and ensure onClick works properly...
+                </p>
+              </div>
+
+              <div class="mt-6">
+                <div class="justify-between card-actions">
+                  <div>
+                    <p class="text-gray-600">Deadline</p>
+                    <p class="font-semibold">27 March 2025</p>
+                  </div>
+                  <button
+                    class="task-btn btn bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  >
+                    Completed
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- activity aside section -->
+      <aside class="col-span-1 bg-white rounded-xl">
+        <div class="text-center border-b-2 border-dashed border-gray-300 p-3">
+          <div class="flex items-center justify-center gap-3">
+            <img src="./assets/activity.png" alt="" />
+            <h2 class="text-gray-800 font-">Activity Log</h2>
+          </div>
+          <button
+            class="px-4 py-2 bg-blue-600 text-white mt-3 rounded-md cursor-pointer hover:bg-blue-700"
+          >
+            Clear History
+          </button>
+        </div>
+      </aside>
+
+      <script src="./script/script.js"></script>
+      <script src="./script/blog.js"></script>
     </main>
-</body>
-
+  </body>
 </html>
+
+
+
