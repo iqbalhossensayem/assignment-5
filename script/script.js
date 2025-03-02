@@ -49,7 +49,7 @@ for (let i = 0; i < taskBtns.length; i++) {
   });
 }
 
-//  theme button
+//  theme button 
 const colors = [
   "#8AAAE5,",
   "#C4DFE6 ",
