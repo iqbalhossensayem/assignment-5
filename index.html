@@ -28,7 +28,7 @@
     </style>
   </head>
 
-  <body class="bg-[#F4F7FF] font-poppins min-h-screen">
+  <body id="body" class="bg-[#F4F7FF] font-poppins min-h-screen">
     <header class="py-4 container mx-auto">
       <nav class="p-4 rounded-xl bg-white flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -45,13 +45,18 @@
             <span id="task-done" class="font-bold text-2xl">23</span>
           </div>
           <div class="">
-            <button class="bg-[#F4F7FF] p-2 cursor-pointer rounded-full">
+            <button
+              id="theme-btn"
+              class="bg-[#F4F7FF] p-2 cursor-pointer rounded-full"
+            >
               <img class="w-8 h-8" src="./assets/theme-btn.png" alt="" />
             </button>
           </div>
         </div>
       </nav>
     </header>
+
+    <!-- main section -->
 
     <main class="container mx-auto rounded-xl lg:grid grid-cols-4 gap-4">
       <!-- task title section -->
@@ -62,8 +67,8 @@
         >
           <!-- task assign card -->
           <div class="flex items-center gap-2 bg-[#F4F7FF] p-3 rounded-lg">
-            <div class="w-6">
-              <img src="./assets/checkbox.png" alt="" />
+            <div class="bg-white p-3 rounded-3xl">
+              <img class="w-6" src="./assets/checkbox.png" alt="" />
             </div>
 
             <div>
@@ -79,7 +84,10 @@
           >
             <img class="h-14 w-14" src="./assets/board.png" alt="" />
 
-            <h3>Discover Something New Today!</h3>
+            <h3>
+              Discover Something <br />
+              New Today!
+            </h3>
           </div>
 
           <!-- date card -->
@@ -101,12 +109,14 @@
           <!-- card 1 -->
 
           <div class="card bg-[#F4F7FF] shadow-sm">
-            <div class="card-body">
+            <div class="card-body tasks">
               <span class="badge badge-xl rounded-[5px] text-xs text-gray-600"
                 >Shop Ease</span
               >
               <div class="flex justify-between">
-                <h2 class="text-xl font-bold">Fix Mobile Button Issue</h2>
+                <h2 class="titles text-xl font-bold">
+                  Fix Mobile Button Issue
+                </h2>
               </div>
 
               <div class=" ">
@@ -134,12 +144,12 @@
 
           <!-- card -2 -->
           <div class="card bg-[#F4F7FF] shadow-sm">
-            <div class="card-body">
+            <div class="card-body tasks">
               <span class="badge badge-xl text-xs rounded-[5px] text-gray-600"
                 >Cloud Sync</span
               >
               <div class="flex justify-between">
-                <h2 class="text-xl font-bold">Add Dark Mode</h2>
+                <h2 class="titles text-xl font-bold">Add Dark Mode</h2>
               </div>
 
               <div class=" ">
@@ -168,12 +178,12 @@
           <!-- card-3 -->
 
           <div class="card bg-[#F4F7FF] shadow-sm">
-            <div class="card-body">
+            <div class="card-body tasks">
               <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]"
                 >Swift Pay</span
               >
               <div class="flex justify-between">
-                <h2 class="text-xl font-bold">Optimize Home page </h2>
+                <h2 class="titles text-xl font-bold">Optimize Home page </h2>
               </div>
 
               <div class=" ">
@@ -202,12 +212,12 @@
           <!-- card -4 -->
 
           <div class="card bg-[#F4F7FF] shadow-sm">
-            <div class="card-body">
+            <div class="card-body tasks">
               <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]"
                 >Meta</span
               >
               <div class="flex justify-between">
-                <h2 class="text-xl font-bold">Add new emoji 🤲</h2>
+                <h2 class="titles text-xl font-bold">Add new emoji 🤲</h2>
               </div>
 
               <div class="">
@@ -236,12 +246,12 @@
           <!-- card- 5 -->
 
           <div class="card bg-[#F4F7FF] shadow-sm">
-            <div class="card-body">
+            <div class="card-body tasks">
               <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]"
                 >Google LLC</span
               >
               <div class="flex justify-between">
-                <h2 class="text-xl font-bold">Integrate OpenAI API</h2>
+                <h2 class="titles text-xl font-bold">Integrate OpenAI API</h2>
               </div>
 
               <div class=" ">
@@ -270,12 +280,12 @@
           <!-- card 6 -->
 
           <div class="card bg-[#F4F7FF] shadow-sm">
-            <div class="card-body gap-3">
+            <div class="card-body tasks">
               <span class="badge badge-xl text-xs text-gray-600 rounded-[5px]"
                 >Glassdoar</span
               >
               <div class="flex justify-between">
-                <h2 class="text-xl font-bold">Improve Job searching</h2>
+                <h2 class="titles text-xl font-bold">Improve Job searching</h2>
               </div>
 
               <div class=" ">
@@ -316,6 +326,8 @@
             Clear History
           </button>
         </div>
+
+        <div id="history"></div>
       </aside>
 
       <script src="./script/script.js"></script>
@@ -323,6 +335,3 @@
     </main>
   </body>
 </html>
-
-
-

@@ -22,8 +22,45 @@ for (let i = 0; i < taskBtns.length; i++) {
     taskNumber.innerText = remainTask;
     taskDone.innerText = doneTask;
 
+    // activity log section
+
+    const container = document.getElementById("history");
+
+    const taskCard = event.target.closest(".card");
+
+    const taskTitle = taskCard.querySelector(".titles").innerText;
+
+    const createDiv = document.createElement("div");
+    createDiv.classList.add(
+      "m-4",
+      "bg-[#F4F7FF]",
+      "p-3",
+      "text-[.9rem]",
+      "rounded-md"
+    );
+
+    createDiv.innerText = `You have completed the task "${taskTitle}" at ${new Date().toLocaleTimeString()}`;
+
+    container.appendChild(createDiv);
+
     if (remainTask === 0) {
       alert("Congratulations!!! You have completed all the current tasks");
     }
   });
 }
+
+//  theme button
+const colors = [
+  "#8AAAE5,",
+  "#C4DFE6 ",
+  "#A7BEAE",
+  "#89ABE3 ",
+  "#E7E8D1",
+  "#F9E795 ",
+];
+const button = document.getElementById("theme-btn");
+
+button.addEventListener("click", function () {
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.backgroundColor = randomColor;
+});
