@@ -24,7 +24,7 @@ for (let i = 0; i < taskBtns.length; i++) {
 
     // activity log section
 
-    const container = document.getElementById("history");
+    const historyContainer = document.getElementById("history");
 
     const taskCard = event.target.closest(".card");
 
@@ -41,10 +41,10 @@ for (let i = 0; i < taskBtns.length; i++) {
 
     createDiv.innerText = `You have completed the task "${taskTitle}" at ${new Date().toLocaleTimeString()}`;
 
-    container.appendChild(createDiv);
+    historyContainer.appendChild(createDiv);
 
     if (remainTask === 0) {
-      alert("Congratulations!!! You have completed all the current tasks");
+      alert("Congratulations!!! You have completed all the current tasks.");
     }
   });
 }
@@ -63,4 +63,14 @@ const button = document.getElementById("theme-btn");
 button.addEventListener("click", function () {
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
   document.body.style.backgroundColor = randomColor;
+});
+
+//  history clear button
+
+const historyClearBtn = document.getElementById("clear-history");
+
+const historySection = document.getElementById("history");
+
+historyClearBtn.addEventListener("click", function () {
+  historySection.innerHTML = "";
 });
